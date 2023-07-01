@@ -1,8 +1,8 @@
 <template>
   <header>
     <div class="headerBox">
-        <h1 class="HeaderTitle">FOOD WITH <span style="color: black;">SOUL</span></h1>
-        <h4 class="HeaderTitleh4">We love making our customers happy by serving them our tasty food! High-quality ingredients mixed with excellent service is the best recipe for a successful food truck.</h4>
+        <h1 class="HeaderTitle">MEALS WITH <span style="color: black;">SOUL</span></h1>
+        <h4 class="HeaderTitleh4">Nothing brings people together like good food...</h4>
         <a href="" class="btn">Go to Menu..</a>
     </div>
   </header>
@@ -98,6 +98,11 @@ header{
 header{
 
     height: 110vh;
+    
+}
+
+.HeaderTitle{
+    font-size: 80px;
     
 }
 

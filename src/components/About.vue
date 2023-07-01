@@ -4,7 +4,7 @@
         <img src="https://images.pexels.com/photos/1527603/pexels-photo-1527603.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="AboutImg">
         <div class="AboutText">
             <h1 class="aboutTitle">
-                GET YOUR FOODS <span style="color: black;">NOW!</span>
+                GET YOUR TREATS <span style="color: black;">NOW!</span>
             </h1>
             <button class="MoreOptions">DISCOVER MORE</button>
         </div>

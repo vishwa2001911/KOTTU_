@@ -6,16 +6,16 @@
             <div v-for="(item, index) in offerItems" :key="index">
                 <div class="sliderItem" >
                 
-                <img src="../assets/img/Chicken-Fried-Rice__1_-removebg-preview.png" alt="" class="sliderImg">
+                <img :src="item.image" alt="" class="sliderImg">
                 
                 <div class="sbox">
                     <div class="extraDetail">
                             <div>
-                                <span style="color: yellow;" class="fa fa-star checked"></span>
-                                <span style="color: yellow;" class="fa fa-star checked"></span>
-                                <span style="color: yellow;" class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
+                                <span style="color: yellow;" :class="{ ye: item.ratings>=1 && item.ratings<=2 }" class="fa fa-star checked"></span>
+                                <span style="color: yellow;" :class="{ ye: item.ratings>=2 && item.ratings<=3 }" class="fa fa-star checked"></span>
+                                <span style="color: yellow;" :class="{ ye: item.ratings>=3 && item.ratings<=4 }" class="fa fa-star checked"></span>
+                                <span class="fa fa-star" :class="{ ye: item.ratings>=4 && item.ratings<=5 }" > </span>
+                                <span class="fa fa-star" :class="{ ye: item.ratings>=5 }"></span>
                             </div>
                             <h4>{{ item.ratings }}</h4>
                     </div>
@@ -26,11 +26,9 @@
                     </div>
                     <div class="buttons">
                         <a class="buynow" @click="clickCount(index)">Buy Now..</a>
-                        <a href="" class="cart" @click.prevent="clickCart()">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
-                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                            </svg>
-                        </a>
+<!--
+    
+-->
                     </div>
                 </div>
             
@@ -54,15 +52,16 @@ export default {
     ],
     data() {
         return {
+            isActive:true,
             offerItems:[
                 {
-                    name:"Chees & Crab Kottu",
+                    name:"Cheese & Chicken Kottu",
                     price:{
                         befroPrice:3.4,
                         afterPrice:2.5,
                     },
-                    ratings:5,
-                    image:'../assets/2-removebg-preview.png'
+                    ratings:3.9,
+                    image:'https://github.com/vishwa2001911/KOTTU_/blob/master/src/assets/img/img/Veg-Cheese-Kottu.png?raw=true'
                 },
                 {
                     name:"Chicken Fried Rice",
@@ -71,34 +70,34 @@ export default {
                         afterPrice:3.3,
                     },
                     ratings:4.9,
-                    image:'../assets/2-removebg-preview.png'
+                    image:'https://github.com/vishwa2001911/KOTTU_/blob/master/src/assets/img/img/Chicken-Fried-Rice_.png?raw=true'
                 },
                 {
-                    name:"Kottu",
+                    name:"Cheese Noodls",
                     price:{
                         befroPrice:5.4,
                         afterPrice:4.2,
                     },
                     ratings:5,
-                    image:'../assets/2-removebg-preview.png'
+                    image:'https://github.com/vishwa2001911/KOTTU_/blob/master/src/assets/img/img/Cheese-Ramen-Noodles.png?raw=true'
                 },
                 {
-                    name:"Kottu",
+                    name:"Lamprice",
                     price:{
                         befroPrice:4.99,
                         afterPrice:3.99,
                     },
-                    ratings:5,
-                    image:'../assets/2-removebg-preview.png'
+                    ratings:4.6,
+                    image:'https://github.com/vishwa2001911/KOTTU_/blob/master/src/assets/img/img/lamprais-.png?raw=true'
                 },
                 {
-                    name:"Kottu",
+                    name:"Mutton Biriyani",
                     price:{
                         befroPrice:5.99,
                         afterPrice:4.99,
                     },
-                    ratings:5,
-                    image:'../assets/2-removebg-preview.png'
+                    ratings:4.8,
+                    image:'https://github.com/vishwa2001911/KOTTU_/blob/master/src/assets/img/img/mutton-fried-rice.png?raw=true'
                 },
             ],
             isBuyNowClicked:false
@@ -131,6 +130,10 @@ export default {
 
 <style>
 
+.ye{
+    color: yellow;
+}
+
 .price{
     display: flex;
     gap: 20px;
@@ -149,16 +152,22 @@ export default {
 .sliderul{
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 15px;
     width: 100%;
     align-items: center;
-    margin: 50px 0;
+    margin: 50px 0 ;
+    margin-top: 10px;
     flex-wrap: wrap;
 }
 
 .sliderli{
     list-style: none;
-    font-size: 20px;
+    border: none;
+    padding: 5px 15px;
+    background-color: #2c3e50;
+    border-radius: 17px;
+    color: whitesmoke;
+    font-size: 15px;
     font-weight: bolder;
     cursor: pointer;
     transition: 0.4s;
@@ -180,12 +189,12 @@ export default {
 
 
 .buynow{
-    padding: 5px 10px;
+    padding: 10px 20px;
     background-color: yellow;
-    border: solid yellow 2px;
+    border: solid black 3px;
     font-weight: bold;
-    color: grey;
-    border-radius: 8px;
+    color: black;
+    font-size: 20px;
     text-decoration: none;
     cursor: pointer;
     text-align: center;
@@ -213,7 +222,9 @@ export default {
 
 .buynow:hover{
     background-color: transparent;
-    color: yellow;
+    color: black;
+    border-color: orange;
+    background-color: orange;
 }
 
 
@@ -284,6 +295,14 @@ export default {
 
     .sliderItemTitle{
         width: 90%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 374px) {
+
+    .sliderItemTitle{
+        width: 70%;
         text-align: center;
     }
 }

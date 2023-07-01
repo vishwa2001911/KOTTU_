@@ -7,15 +7,15 @@
     <div class="MenuItems">
 
            
-                <div class="MenuBox" v-for="(item, index) in menuItems" :key="index">
+                <div class="MenuBox" v-for="(item, index) in menuItems" :key="index" style="overflow:visible;">
 
-                    <img src="../assets/Chicken-Kottu-removebg-preview.png" alt="" class="menuItemIMG">
+                    <img :src="item.image" alt="" class="menuItemIMG" >
                     <h1 class="itemName">{{ item.itemName }}</h1>
                     <div class="rate-stars">
                         <span style="color: yellow;" class="fa fa-star checked"></span>
                         <span style="margin-left: 10px;">{{ item.ratings }}</span>
                     </div>
-                    <h4 class="ItemPrice">{{ item.price }}</h4>
+                    <h4 class="ItemPrice">${{ item.price }}</h4>
 
                     <span class="numberCount" v-if="item.count!=0">{{ item.count }}</span>
 
@@ -165,7 +165,7 @@ export default {
 .itemName{
     position: absolute;
     top: 79px;
-    left: 122px;
+    left: 137px;
     font-size: 20px;
 }
 
@@ -174,7 +174,7 @@ export default {
 .menuItemIMG{
     
     position:absolute;
-    top: -15px;
+    top: -25px;
     left: -34px;
     width: 200px;
     -webkit-filter: drop-shadow(5px 5px 5px #222);
@@ -277,6 +277,7 @@ export default {
     box-shadow: 7px 9px 7px -3px rgba(191,176,191,1);
     transition: 0.4s;
     margin: 10px;
+    margin-top: 20px;
   
 }
 

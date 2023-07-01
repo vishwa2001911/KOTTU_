@@ -22,23 +22,34 @@ import cart from './components/cart.vue'
 
 
 export default {
-  data() {
+  data() {                          
     return {
       menuItems:[
+                /*
                 {
-                    itemName:'Chicken Kottu',
+                    itemName:'Mutton Biriyani',
                     price:3.56,
-                    image:"url",
+                    image:"https://github.com/vishwa2001911/KOTTU_/blob/master/src/assets/img/img/mutton-fried-rice.png?raw=true",
                     ratings:'4.9',
                     count:0,
                     oldPrice:4.99,
                     offer:false
                 },
+                
+                {
+                    itemName:'Pork Fried Rice',
+                    price:3.56,
+                    image:"https://github.com/vishwa2001911/KOTTU_/blob/master/src/assets/img/img/grill-pork-fried-rice-.png?raw=true",
+                    ratings:'4.9',
+                    count:0,
+                    oldPrice:4.99,
+                    offer:false
+                },*/
                 {
                     itemName:'Chicken Fried Rice',
                     price:3.56,
-                    image:"url",
-                    ratings:'4.9',
+                    image:"https://github.com/vishwa2001911/KOTTU_/blob/master/src/assets/img/img/Chicken-Fried-Rice_.png?raw=true",
+                    ratings:'4.5',
                     count:0,
                     oldPrice:4.99,
                     offer:true
@@ -46,61 +57,63 @@ export default {
                 {
                     itemName:'Cheese and Crab Kottu',
                     price:3.56,
-                    image:"url",
+                    image:"https://github.com/vishwa2001911/KOTTU_/blob/master/src/assets/img/img/Crab%20kottu.png?raw=true",
                     ratings:'4.9',
                     count:0,
                     oldPrice:4.99,
                     offer:true
                 },
                 {
-                    itemName:'Lamp Rice',
+                    itemName:'LampRice',
                     price:3.56,
-                    image:"url",
+                    image:"https://github.com/vishwa2001911/KOTTU_/blob/master/src/assets/img/img/lamprais-.png?raw=true",
                     ratings:'4.9',
                     count:0,
                     oldPrice:4.99,
                     offer:true
                 },
+                /*
                 {
                     itemName:'Chicken Kottu',
                     price:3.56,
-                    image:"url",
+                    image:"https://github.com/vishwa2001911/KOTTU_/blob/master/src/assets/img/img/Chicken-Kottu-removebg-preview.png?raw=true",
                     ratings:'4.9',
                     count:0,
                     oldPrice:4.99,
                     offer:false
                 },
+                */
                 {
-                    itemName:'Chiken Kottu',
+                    itemName:'Cheese & Chicken Kottu',
                     price:3.56,
-                    image:"url",
+                    image:"https://github.com/vishwa2001911/KOTTU_/blob/master/src/assets/img/img/Veg-Cheese-Kottu.png?raw=true",
                     ratings:4.9,
                     count:0,
                     oldPrice:4.99,
                     offer:false
                 },
                 {
-                    itemName:'Chiken Kottu',
+                    itemName:'Cheese Ramen Noodles ',
                     price:3.56,
-                    image:"url",
+                    image:"https://github.com/vishwa2001911/KOTTU_/blob/master/src/assets/img/img/Cheese-Ramen-Noodles.png?raw=true",
                     ratings:'4.9',
                     count:0,
                     oldPrice:4.99,
                     offer:false
                 },
                 {
-                    itemName:'Chiken Kottu',
+                    itemName:'Rice & Curry',
                     price:3.56,
-                    image:"url",
+                    image:"https://github.com/vishwa2001911/KOTTU_/blob/master/src/assets/img/img/Rice%20and%20curry.png?raw=true",
                     ratings:'4.9',
                     count:0,
                     oldPrice:4.99,
                     offer:true
                 },
                 {
-                    itemName:'Chiken Kottu',
+                    itemName:'String-hopper Kottu',
                     price:3.56,
-                    image:"url",
+                    image:"https://github.com/vishwa2001911/KOTTU_/blob/master/src/assets/img/img/String-Hopper-Kottu.png?raw=true",
                     ratings:'4.9',
                     count:0,
                     oldPrice:4.99,
