@@ -249,7 +249,8 @@ export default {
 .buttons{
     width: 160px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 
 }
 

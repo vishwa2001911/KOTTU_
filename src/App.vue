@@ -7,7 +7,7 @@
   <About v-if="!isClicked || !isCartClose"></About>
   <BuyNow :pickedItems="pickedItems" @closebtn="clicked()"  @checkout="checkout()" v-if="isClicked"></BuyNow>
   <cart @ClickCartClose="ClickCartClose"  :icount="iCount" :pickedItems="pickedItems" :menuItems="menuItems"  @Click_checkout_btn="checkedClicked()" v-if="isCartClose" ></cart>
-
+  <PageLoader></PageLoader>
 
 </template>
 
@@ -19,6 +19,7 @@ import menuItems from './components/menuItems.vue'
 import About from './components/About.vue'
 import BuyNow from './components/BuyNow.vue'
 import cart from './components/cart.vue'
+import PageLoader from './components/PageLoader.vue'
 
 
 export default {
@@ -124,6 +125,7 @@ export default {
             isClicked:false,
             isCartClose:false,
             iCount:0
+
     }
   },
   methods: {
@@ -165,7 +167,9 @@ export default {
     menuItems,
     About,
     BuyNow,
-    cart
+    cart,
+    PageLoader
+    
 
   },
   
@@ -188,5 +192,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   
+}
+
+html{
+  scroll-behavior: smooth;
 }
 </style>

@@ -1,9 +1,9 @@
 <template>
   <header>
     <div class="headerBox">
-        <h1 class="HeaderTitle">MEALS WITH <span style="color: black;">SOUL</span></h1>
+        <h1 class="HeaderTitle">MEALS WITH <span style="color: yellow;">LOVE</span></h1>
         <h4 class="HeaderTitleh4">Nothing brings people together like good food...</h4>
-        <a href="" class="btn">Go to Menu..</a>
+        <a href="#menu" class="btn"  >Go to Menu..</a>
     </div>
   </header>
   <div class="service">

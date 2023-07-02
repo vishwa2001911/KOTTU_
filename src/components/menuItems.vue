@@ -1,7 +1,7 @@
 <template>
 
-<h1 class="MenuBoxTitle">Our Menu</h1>
-<div class="MenuItemsBox">
+<h1 class="MenuBoxTitle" id="menu">Our Menu</h1>
+<div class="MenuItemsBox" >
     
 
     <div class="MenuItems">
