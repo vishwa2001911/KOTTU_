@@ -1,6 +1,6 @@
 <template>
     <div class="page-loader" v-if="!isloaded" >
-      <img style="width: 200px;" src="https://github.com/vishwa2001911/Project_/blob/master/img/output-onlinegiftools.gif?raw=true" alt="">
+      <img style="width: 150px;" src="https://github.com/vishwa2001911/Project_/blob/master/img/Yellow%20Abstract%20Cooking%20Fire%20Free%20Logo%20(1).png?raw=true" alt="">
     </div> 
   </template>
   
@@ -38,7 +38,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-color: whitesmoke;
+      background-color: black;
       z-index: 999;
     }
 
