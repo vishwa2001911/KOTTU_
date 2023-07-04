@@ -2,21 +2,23 @@
     <div class="buy">
         
         <div class="buybox">
-            <form>
+            <form @submit="Checkout">
             <h1 class="buyTitle">Personal Infprmation</h1>
             <label for="">Name and Surname</label>
-            <input type="text" class="inputName" placeholder="Full Name">
+            <input type="text" class="inputName" placeholder="Full Name" v-model="submitData.name" required>
+            <label for="">Phone</label>
+            <input type="text" class="inputName" placeholder="+94782497010" v-model="submitData.phone" required>
             <label for="">Address</label>
-            <input type="text" class="inputAddress" placeholder="D.R. Wijewardena Mawatha Colombo 10">
+            <input type="text" class="inputAddress" placeholder="D.R. Wijewardena Mawatha Colombo 10" v-model="submitData.address" required>
             <h1 class="buyTitle">Card Information</h1>
-            <input type="text" class="inputCardNum"  placeholder="Card Number">
+            <input type="text" class="inputCardNum"  placeholder="Card Number" v-model="submitData.card.cNumber" required>
             <div class="card">
-                <input type="text" class="cardINfo" placeholder="Month">
-                <input type="text" class="cardINfo" placeholder="Year">
-                <input type="text" class="cardINfo" placeholder="CVV">
+                <input type="text" class="cardINfo" placeholder="Month" v-model="submitData.card.exMonth" required>
+                <input type="text" class="cardINfo" placeholder="Year" v-model="submitData.card.exYear" required>
+                <input type="text" class="cardINfo" placeholder="CVV" v-model="submitData.card.cvvNumber" required>
             </div>
             <div class="btnbox">
-                <button class="check" @click.prevent="Checkout()">Checkout..</button>
+                <button class="check">Checkout..</button>
             </div>
             </form>
             <div class="products">
@@ -50,13 +52,31 @@
 </template>
 
 <script>
+import axios from 'axios';
+
+
+
+
 export default {
     props:[
         'pickedItems'
     ],
     data() {
         return {
-            total:0
+            total:0,
+            submitData:{
+                name:"",
+                address:"",
+                phone:"",
+                card:{
+                    cNumber:"",
+                    exMonth:"",
+                    exYear:"",
+                    cvvNumber:""
+                },
+                items:this.pickedItems,
+                price:0
+            }
         }
     },
     beforeMount() {
@@ -66,6 +86,9 @@ export default {
     },
 
     methods: {
+        addData(){
+            console.log(this.submitData);
+        },
         calculate(){
             let count = 0
 
@@ -74,7 +97,7 @@ export default {
             });
 
             this.total = count
-
+            this.submitData.price = count
         },
         addItem(index){
             this.pickedItems[index].numberOfItems++;
@@ -89,7 +112,15 @@ export default {
             }
         }},
         Checkout(){
+            if(true){
+                axios
+                .post("https://testproject-10c01-default-rtdb.asia-southeast1.firebasedatabase.app/postss.json", this.submitData).then(response => {
+                    console.log(response)
+                })
+
             this.$emit('checkout')
+            console.log(this.submitData);
+            }
         },
         closebtn(){
             this.pickedItems.length = 0;
