@@ -1,4 +1,4 @@
-# kottu - Online delivery platform for Gindara-cafe
+# Kottu - Online delivery platform for Gindara-cafe
 
 url : https://vishwa2001911.github.io/kottu/
 
